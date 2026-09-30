@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickNotes - Home</title>
+</head>
+<body>
+  <header>
+    <h1>QuickNotes</h1>
+    <p>Your lightweight, fast note-taking companion for daily productivity.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Add Note</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="note-title">Title</label>
+          <input type="text" id="note-title" name="note-title" required>
+        </div>
+        <div>
+          <label for="note-body">Note Body</label>
+          <textarea id="note-body" name="note-body" rows="4" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Add Note</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <article>
+        <h3>Project Meeting Notes</h3>
+        <p>Discussed milestones for Q4 deliverables and scheduled code review sessions with the frontend engineering team.</p>
+      </article>
+
+      <article>
+        <h3>Grocery Shopping List</h3>
+        <p>Whole grain bread, organic milk, roasted almonds, fresh avocados, and ground Ethiopian coffee.</p>
+      </article>
+
+      <article>
+        <h3>System Architecture Ideas</h3>
+        <p>Explore event-driven microservices with Redis Streams for asynchronous message processing and real-time updates.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickNotes. All rights reserved.</p>
+  </footer>
+</body>
+</html>
