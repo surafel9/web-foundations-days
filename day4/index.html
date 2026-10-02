@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickNotes - Live Character Counter & Dark Mode</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <div class="brand">
+        <h1>QuickNotes</h1>
+        <p class="tagline">Live character counter and adaptive theme preview.</p>
+      </div>
+      <div class="header-actions">
+        <button id="theme-toggle" type="button" class="btn btn-secondary">Dark mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="editor-section">
+        <div class="field-header">
+          <label for="note-text" class="field-label">Note draft</label>
+          <span class="field-hint">Max recommended: 200 characters</span>
+        </div>
+
+        <textarea
+          id="note-text"
+          rows="7"
+          placeholder="Start typing your note here... (Press Esc to clear)"
+          spellcheck="true"
+        ></textarea>
+
+        <div class="editor-toolbar">
+          <div class="stats-group">
+            <p id="char-count" class="counter-badge">0 / 200 characters</p>
+            <p id="word-count" class="counter-badge">0 words</p>
+          </div>
+          <div class="actions-group">
+            <button id="clear-btn" type="button" class="btn btn-danger">Clear</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="help-section">
+        <h2>Features &amp; Shortcuts</h2>
+        <ul>
+          <li><strong>Live tracking:</strong> Automatically counts characters and words on every stroke.</li>
+          <li><strong>Threshold indicators:</strong> Warning highlights orange when over 180 characters, and bold red when over 200 characters.</li>
+          <li><strong>Auto-save:</strong> Your draft is saved to local storage instantly and restored on page refresh.</li>
+          <li><strong>Quick clear:</strong> Click the <kbd>Clear</kbd> button or press <kbd>Esc</kbd> anytime inside the text area.</li>
+          <li><strong>Theme memory:</strong> Toggle between light and dark modes with preference persisted.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2026 QuickNotes &bull; Web Foundations Day 4</p>
+    </footer>
+  </div>
+</body>
+</html>
