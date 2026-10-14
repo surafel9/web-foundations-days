@@ -1,0 +1,10 @@
+# Course Reflection
+
+### What was the most difficult concept in the course, and how did you overcome it?
+The most challenging concept in the course was reconciling strict database transactional consistency with extreme concurrency, particularly handling race conditions and high-contention writes during flash traffic bursts. Early on, I struggled to grasp why simply placing a `SELECT` followed by an `UPDATE` in an application handler fails under simultaneous requests. I overcame this by methodically tracing database execution paths, experimenting with row-level locking mechanisms (`SELECT FOR UPDATE`), and studying atomic conditional SQL statements (`UPDATE ... WHERE status = 'available'`). Building concrete capacity models and understanding how in-memory caching tiers (Redis) shield relational storage from connection exhaustion demystified how production systems maintain absolute correctness without grinding to a halt.
+
+### Which part of your capstone would you improve, based on the feedback you received?
+Based on peer and instructor feedback regarding real-time user experience and failure modes, I would improve the seat map synchronization and network disconnect recovery. Currently, the design relies on clients polling the seat status endpoint or receiving conflict errors on submission. I would enhance this by implementing lightweight Server-Sent Events (SSE) or WebSockets to broadcast live seat availability deltas directly to connected browsers. Additionally, I would upgrade the hold cleanup mechanism by utilizing Redis keyspace expiration notifications instead of periodic database polling sweeps, ensuring released seats are instantly recyclable.
+
+### What will you learn next?
+Next, I plan to dive into distributed systems engineering and event-driven architectures. Specifically, I want to master Apache Kafka for high-throughput event streaming, explore distributed consensus algorithms like Raft, and gain hands-on experience orchestrating auto-scaling microservices with Kubernetes and PostgreSQL connection pooling across multi-region deployments.
